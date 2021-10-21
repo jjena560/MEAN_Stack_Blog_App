@@ -1,0 +1,29 @@
+{
+  "name": "footnotes",
+  "version": "1.0.0",
+  "description": "MEAN Stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjena560/MEAN_Stack_Blog_App.git"
+  },
+  "keywords": [
+    "MEAN",
+    "stack",
+    "angular",
+    "app"
+  ],
+  "author": "Jyotiprakash Jena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjena560/MEAN_Stack_Blog_App/issues"
+  },
+  "homepage": "https://github.com/jjena560/MEAN_Stack_Blog_App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.11"
+  }
+}
