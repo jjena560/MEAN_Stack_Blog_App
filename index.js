@@ -7,14 +7,14 @@ const path = require('path');
 const authentication = require('./routes/authentication')(router);
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.uri, (err)=>{
-    if(err){
+mongoose.connect(config.uri, (err) => {
+    if (err) {
         console.log(err);
-    }else{
+    } else {
         // console.log(config.secret)  
-        console.log("conected to database "+ config.db);
+        console.log("conected to database " + config.db);
     }
-    
+
 });
 
 app.use(express.static(__dirname + '/client/dist/client'));
@@ -25,6 +25,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/dist/client/index.html'));
 });
 
-app.listen(8080, ()=>{
+app.listen(8085, () => {
     console.log("it is running");
 });
