@@ -1,5 +1,7 @@
 export class Blog {
     title: string
     desc: string
-    image: Blob
+    createdAt: any
+    image: string
+    likes: any
 }

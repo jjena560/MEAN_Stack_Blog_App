@@ -1,5 +1,8 @@
 const express = require("express")
 const app = express();
+
+const Article = require('./models/blog')
+const articleRouter = require('./routes/articles')
 const router = express.Router();
 const mongoose = require("mongoose");
 const config = require('./config/database');
@@ -21,10 +24,22 @@ app.use(express.static(__dirname + '/client/dist/client'));
 app.use('/authentication', authentication);
 
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/dist/client/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname + '/client/dist/client/index.html'));
+// });
 
-app.listen(8085, () => {
-    console.log("it is running");
+// app.use(cors());
+app.use(express.json());
+app.use('/articles', articleRouter)
+
+
+app.get('/', async (req, res) => {
+    const articles = await Article.find().sort({
+        createdAt: 'desc'
+    })
+    res.send({ articles: articles })
+})
+
+app.listen(8000, () => {
+    console.log("it is running",);
 });

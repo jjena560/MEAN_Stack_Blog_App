@@ -9,6 +9,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { AddBlogComponent } from './Components/add-blog/add-blog.component';
 import { PlayersComponent } from './Components/players/players.component';
 import { EditBlogComponent } from './Components/edit-blog/edit-blog.component';
+import { BlogItemComponent } from './Components/blog-item/blog-item.component';
+import { AllBlogsComponent } from './Components/all-blogs/all-blogs.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { EditBlogComponent } from './Components/edit-blog/edit-blog.component';
     HomeComponent,
     AddBlogComponent,
     PlayersComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    BlogItemComponent,
+    AllBlogsComponent
   ],
   imports: [
     BrowserModule,

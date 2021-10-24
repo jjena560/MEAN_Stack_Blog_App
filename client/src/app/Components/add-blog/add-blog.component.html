@@ -57,30 +57,29 @@
             </div>
 
             <div class="row g-5">
-                <form class="needs-validation" novalidate>
+                <form (ngSubmit)="onSubmit()">
                     <div class="row g-3">
                         <div class="col-8">
-                            <label for="firstName" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <label class="form-label">Title</label>
+                            <input type="text" name="title" [(ngModel)]="title" class="form-control" placeholder=""
+                                value="" required />
 
                         </div>
 
                         <div class="col-8">
-                            <label for="lastName" class="form-label">Description</label>
+                            <label class="form-label">Description</label>
                         </div>
 
                         <div class="col-8">
-                            <textarea name="comment" form="usrform" rows="5" cols="95"></textarea>
+                            <textarea name="desc" [(ngModel)]="desc" form="usrform" rows="5" cols="95"></textarea>
 
                         </div>
 
                         <div class="col-8 py-2">
-                            <label for="username" class="form-label">Image</label>
+                            <label class="form-label">Image Link</label>
                             <div class="input-group has-validation">
-                                <input type="file" class="form-control" id="username" placeholder="Username" required>
-                                <div class="invalid-feedback">
-                                    Your username is required.
-                                </div>
+                                <input type="text" name="image" [(ngModel)]="image" class="form-control" required />
+
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Blog } from 'src/app/blog';
+import { Blog } from 'src/app/Blog';
+// import { Blog } from 'src/app/blog';
+import { blogs } from 'src/constant';
 
 @Component({
   selector: 'app-add-blog',
@@ -9,8 +11,10 @@ import { Blog } from 'src/app/blog';
 export class AddBlogComponent implements OnInit {
   title: string;
   desc: string;
-  image: Blob;
-  blogs: Blog[];
+  image: any;
+  likes: any;
+  createdAt: any;
+  articles: any;
   @Output() blogAdd: EventEmitter<Blog> = new EventEmitter();
 
   constructor() { }
@@ -22,7 +26,11 @@ export class AddBlogComponent implements OnInit {
       title: this.title,
       desc: this.desc,
       image: this.image,
+      createdAt: this.createdAt,
+      likes: this.likes
     }
+
+    console.log("added", blog);
     this.blogAdd.emit(blog);
 
   }
